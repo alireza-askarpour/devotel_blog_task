@@ -2,8 +2,11 @@ import { bold } from 'chalk'
 import express, { Express, Router } from 'express'
 import { GlobalExceptionHandler } from './common/exception/global.exception'
 import { NotFoundExceptionHandler } from './common/exception/not-found.exception'
-import { SwaggerConfig } from './config/swagger.config'
-import { ConfigService } from './config/config-service.config'
+import { SwaggerConfig, ConfigService, DatabaseConfig } from './config'
+import { TransformInterceptor } from './common/middlewares/transform-interceptor.middleware'
+
+import appRouter from './modules/app/app.routes'
+import authRouter from './modules/auth/auth.routes'
 
 export default class Application {
   private app: Express = express()
@@ -12,14 +15,17 @@ export default class Application {
 
   constructor() {
     this.configureMiddleware()
-    this.setupErrorHandlers()
     this.setupSwagger()
+    this.setupDatabase()
+    this.setupRoutes()
+    this.setupErrorHandlers()
   }
 
   private configureMiddleware(): void {
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
     this.app.use(express.static('public'))
+    this.app.use(TransformInterceptor)
   }
 
   private setupErrorHandlers(): void {
@@ -28,7 +34,10 @@ export default class Application {
   }
 
   private setupRoutes(): void {
-    // this.appRouter.use("users", usersRouters)
+    this.appRouter.use(appRouter)
+    this.appRouter.use('/auth', authRouter)
+
+    this.app.use(this.appRouter)
   }
 
   private setupSwagger(): void {
@@ -36,11 +45,15 @@ export default class Application {
     SwaggerConfig.setup(this.app, path)
   }
 
-  public run(port: number, mode: string = 'development'): void {
+  private async setupDatabase(): Promise<void> {
+    await DatabaseConfig.init()
+  }
+
+  public async run(port: number, mode: string): Promise<void> {
     this.app.listen(port, () => {
-      const runningMode = `Server running in ${bold(mode)} mode`
-      const runningOnPort = `on port ${bold(port)}`
-      const runningSince = `[since ${new Date().toISOString()}]`
+      const runningMode: string = `Server running in ${bold(mode)} mode`
+      const runningOnPort: string = `on port ${bold(port)}`
+      const runningSince: string = `[since ${new Date().toISOString()}]`
 
       console.log(`🏁 —> ${runningMode} ${runningOnPort} ${runningSince}`)
     })

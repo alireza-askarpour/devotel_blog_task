@@ -7,6 +7,7 @@ interface Config {
   is_test: boolean
   is_production: boolean
   is_development: boolean
+  firebase_api_key: string
 }
 
 export class ConfigService {
@@ -26,6 +27,7 @@ export class ConfigService {
       is_test: process.env.NODE_ENV === 'test',
       is_production: process.env.NODE_ENV === 'production',
       is_development: process.env.NODE_ENV === 'development',
+      firebase_api_key: process.env.FIREBASE_API_KEY as string,
     }
   }
 

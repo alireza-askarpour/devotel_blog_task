@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "devotel-blog-task",
+  "private_key_id": "1fd1fbb6ec8419baa3103c5a60515a8394517d96",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDEijsB0bMSICSy\nM/jky/y4EH6Y/nj9hYQhHWBtQLWOzu+f12YAH3Z3CeL7/1EohuIftX3T9MppKBjX\nBkfNW5aTYCAy4USFCr5EoAq3ap6QNpc8epI4qjCGjc5wSSeRDEHEr6jmYWLHdj5Q\nc8UpJknq9d6Oqc+a/IXxsDHiFp2g/pAzcVqqBR9JKBdZDFyJwT+tbV3GNIuUMqD2\n3iz2Qaowm3fuyi9CnjM7NmbC4q0adgcX877M58vJoeGHueLqLtWRXQkN9A1zug64\nr2qkU4WQoBHjBFuRy/WRt1LXKrO0HYgIch4yqHHAdlYE94TzO8sbmCoojqMBZsLK\nrc95ywh3AgMBAAECggEABrqDb0+COuz2H1Jfg1hnIYIRuM6AI+XN8o2dPyryTEj8\ns9My/xlp+9n5zGN0Stfl++yXDzTtN7u+BfaFahwS7p6223xnf8qGCGFrnICTnHT8\nqSm6bHg0dcF7FNBcVhSTrSvPs3ttX04cBLMXR+OzWiOVZ/rw9um4SDWeWj19+K9O\n+kZ8w/TCK2sgFmgtjZBfymFRc6YGYc7h1g+hsxPaqbVzRjZkaw943bRTtWGixcML\nQU2Fkx1KUWkRR5kmjyCGqACt9A9yav3+1z3OijV82ArxAZdlupaLq5DcIvU0ci+/\n5kvToDSnTWt9i7Ld/FvZpEc+yocpbsau2ky67udH+QKBgQDz3qNttgqLT+CN0DNj\nqhD8z9YmLwTnRulkoO0wCafaGiFbHIbT8sa0Jf/ge3RFs90MK5WmNPYr7KJt/yEZ\n1SLi1QcXxGCgXew/o56AzWXndWP7TcjkvV53fOE1ZGDn+VmFTNfcR6Oidc0HZMKH\npt1MmrJoLYoopEf77rWsRPuxnQKBgQDOUOj2X2Z2l5O8UuythZjBIAWbqL2xBiJe\nV/rT63kFHhvUrFggdhPTOs46oG1cBYUzehDddKomMR7wn8ku+pqidrwuIb9p6pbe\nzQilrsMg9JRlLKIxWF7vN4ABGLmpasxKwxaYoSo22Nou9fZY2yAodU9xh1OXUF2w\nCpt2bRzAIwKBgD4CJlwHJbc2oEpu3iJBZABkeHdNDVohVccYhDbqvZtfeYvJPR83\nY/76io1x1qbCjTpC+tJANTgF+2cssCX5Y915fUw1yrv8Jc4otGzbzUWFO97ycFp5\nLEQFpN4Gn/1cEb8rQtfn/1uXyIJQxIXpj+uiiiqjKbYbz5HnqJodEEKhAoGAHhbi\nwvvK38TfgPm/FteDHbdj2f3UHHs+i+/c3wdakQqBGJVCDQnrfkT3SsmW6XLMqGNH\nDmUzY3qKfqFvH/DgmI0kiL3XQsU516ijeDZyst24vsCxruyqe8zmWEKY4UJ4JPcq\n1nu6wmECARNSKEdc+0mQmogYAttvrnr9jVoAdW0CgYBT2c+k2I9iiMHweNhq/jHN\n3ccn0F+1E1g4u+MRHsZtiGcfquD/NKKEe9Ma5PAGlGzkPVoHBHGRSh0IxdkeQzrO\nChW9FRF/OSxQUJO7tBHxAe2Nn8Ii4gFdnAZABhm1wkoJsgyjl4LwEOicgaEcWb6q\nOzW0uLe/2O716t5uql/iCQ==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-x2gs6@devotel-blog-task.iam.gserviceaccount.com",
+  "client_id": "101874835142212835749",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-x2gs6%40devotel-blog-task.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

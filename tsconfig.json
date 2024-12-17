@@ -1,11 +1,27 @@
 {
   "compilerOptions": {
-    "outDir": "dist",
     "esModuleInterop": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictPropertyInitialization": false,
+    "emitDecoratorMetadata": true,
     "strict": true,
-    "baseUrl": ".",
-    "paths": {
-      "*": ["*", "src/*"]
-    }
+    "target": "ES2018",
+    "lib": ["es5", "es6", "ES2018"],
+    "types": ["node", "jest"],
+    "typeRoots": ["node_modules/@types", "@types"],
+    "resolveJsonModule": true,
+    "noImplicitAny": true
+  },
+  "outDir": "./dist",
+  "include": ["./src/**/*.ts", "@types/express/index.d.ts"],
+  "exclude": ["./src/public/", "node_modules", "dist"],
+  "ts-node": {
+    "files": true
   }
 }
