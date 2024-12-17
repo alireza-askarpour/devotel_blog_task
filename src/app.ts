@@ -7,6 +7,7 @@ import { TransformInterceptor } from './common/middlewares/transform-interceptor
 
 import appRouter from './modules/app/app.routes'
 import authRouter from './modules/auth/auth.routes'
+import postsRouter from './modules/posts/posts.routes'
 
 export default class Application {
   private app: Express = express()
@@ -24,7 +25,7 @@ export default class Application {
   private configureMiddleware(): void {
     this.app.use(express.json())
     this.app.use(express.urlencoded({ extended: true }))
-    this.app.use(express.static('public'))
+    this.app.use('/uploads', express.static('uploads'))
     this.app.use(TransformInterceptor)
   }
 
@@ -36,6 +37,7 @@ export default class Application {
   private setupRoutes(): void {
     this.appRouter.use(appRouter)
     this.appRouter.use('/auth', authRouter)
+    this.appRouter.use('/posts', postsRouter)
 
     this.app.use(this.appRouter)
   }
