@@ -14,7 +14,7 @@ export class SwaggerConfig {
       }),
     )
 
-    app.use('/swagger', swaggerUI.serve, swaggerSetup)
+    app.use(path, swaggerUI.serve, swaggerSetup)
   }
 
   private static getSwaggerDefinition(url: string) {
@@ -31,7 +31,7 @@ export class SwaggerConfig {
       },
       server: [
         {
-          url: '/swagger',
+          url,
         },
       ],
       components: {

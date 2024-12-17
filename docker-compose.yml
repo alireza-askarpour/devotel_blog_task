@@ -1,0 +1,45 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: blog_app
+    ports:
+      - '${APP_PORT}:${APP_PORT}'
+    environment:
+      - NODE_ENV=development
+      - APP_NAME=${APP_NAME}
+      - APP_PORT=${APP_PORT}
+      - APP_SECRET=${APP_SECRET}
+      - DOC_PATH=${DOC_PATH}
+      - APP_DOMAIN=${APP_DOMAIN}
+      - APP_URL=${APP_URL}
+      - DB_HOST=db
+      - DB_PORT=${DB_PORT}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_NAME=${DB_NAME}
+      - TYPEORM_SYNC=${TYPEORM_SYNC}
+      - FIREBASE_API_KEY=${FIREBASE_API_KEY}
+    volumes:
+      - .:/app
+      - /app/node_modules
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15-alpine
+    container_name: blog_db
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - '${DB_PORT}:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./uploads:/app/uploads
+volumes:
+  postgres_data:
