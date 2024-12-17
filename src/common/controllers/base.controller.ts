@@ -1,6 +1,6 @@
 import { NextFunction, Request, Response } from 'express'
-import { PageOptions } from '../../interfaces/page-options.interface'
-import { PageMeta } from '../../interfaces/page-meta.interface'
+import { PageOptions } from '../interfaces/page-options.interface'
+import { PageMeta } from '../interfaces/page-meta.interface'
 
 export abstract class BaseController {
   protected catchAsync(fn: (req: Request, res: Response, next: NextFunction) => Promise<any>) {

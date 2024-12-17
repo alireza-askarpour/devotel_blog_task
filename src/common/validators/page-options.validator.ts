@@ -1,5 +1,5 @@
 import Joi from 'joi'
-import { PageOrder } from '../../interfaces/page-order.interface'
+import { PageOrder } from '../interfaces/page-order.interface'
 
 export const PageOptionsValidator = Joi.object({
   page: Joi.number().integer().min(1).default(1),

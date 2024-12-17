@@ -1,7 +1,7 @@
 import { Request, Response } from 'express'
 import { StatusCodes } from 'http-status-codes'
 import { ConfigService } from '../../config'
-import { PageMeta } from '../../interfaces'
+import { PageMeta } from '../../common/interfaces'
 import { PostsService } from './posts.service'
 import { JoiValidator, deleteFileIfExist } from '../../common/utils'
 import { CreatePostValidator, UpdatePostValidator } from './validators'
